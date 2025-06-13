@@ -1,0 +1,388 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.container {
+    width: 80%;
+    margin: auto;
+}
+.seat-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+.seat-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.seat {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border: 2px solid #333;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+.seat.selected {
+    background-color: green;
+    color: white;
+}
+#proceedToPayment {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#lowerDeck, #upperDeck {
+    width: 250px;
+    height: 600px;
+    display: grid;
+    border-radius: 5px;
+    grid-template-columns: 1fr 90px 1fr;
+    gap: 5px;
+    border: 2px solid black;
+    padding: 10px;
+    justify-content: center;
+    align-content: flex-start;
+  }
+  
+  
+  .selected {
+    background-color: green !important;
+    color: white;
+  }
+  .upperDeck{
+    display: grid;
+    grid-auto-columns: 1fr 90px 1fr;
+    width: 200px;
+  } 
+.seat-container{
+    display: flex;
+    gap: 80px;
+}
+/* Aside Section Styling */
+aside {
+  position: fixed;
+  top: 0;
+  right: -350px; /* Initially hidden */
+  width: 300px;
+  height: 100%;
+  background: white;
+  box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: right 0.3s ease-in-out;
+}
+
+aside.show {
+  right: 0;
+}
+
+#passengerForm input {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+}
+
+#paymentBtn, #closeAside {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#paymentBtn {
+  background-color: green;
+  color: white;
+  border: none;
+}
+
+#closeAside {
+  color: black;
+  border: none;
+  background-color: white;
+}
+.passenger-entry{
+  margin-bottom: 50px;
+}
+
+.aside {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  padding: 20px;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+  z-index: 1000;
+}
+
+.aside.show {
+  transform: translateX(0);
+}
+
+.hidden {
+  display: none;
+}
+.seat.booked {
+  background-color: red;
+  color: white;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.booked {
+  background-color: red;  /* Change to desired color for booked seats */
+  color: white;
+  pointer-events: none; /* Disables clicking on the booked seat */
+}
+
+#paymentForm{
+  background-color: aquamarine;
+  padding: 10px;
+  align-items: center;
+  border-radius: 5px;
+}
+#paymentForm input{
+  margin-top: 20px;
+  height: 20px;
+}
+#paymentForm button{
+  margin-top: 20px;
+}
+
+
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  padding-top: 100px;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  margin: auto;
+  background-color: white;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close {
+  color: red;
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+.trip-info-card {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 24px 32px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f0f4ff, #e5ecfb);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  transition: transform 0.2s ease;
+}
+
+.trip-info-card:hover {
+  transform: scale(1.01);
+}
+
+.trip-info-card h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #2c3e50;
+}
+
+.trip-info-card p {
+  font-size: 16px;
+  margin: 6px 0;
+  color: #34495e;
+}
+
+.trip-info-card p strong {
+  color: #2c3e50;
+}
+.selected-seats-card {
+  max-width: 400px;
+  /* margin: 20px auto; */
+  padding: 20px 24px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.selected-seats-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #d32f2f; /* Redbus-like red */
+  margin-bottom: 16px;
+}
+
+.selected-seats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.selected-seats-list div {
+  background-color: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+.total-amount {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 16px;
+}
+
+#proceedToPayment {
+  width: 100%;
+  padding: 12px;
+  background-color: #d32f2f;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#proceedToPayment:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#proceedToPayment:not(:disabled):hover {
+  background-color: #b71c1c;
+}
+/* Initial state - hidden with transition applied */
+#asideSection {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 420px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  padding: 24px;
+  overflow-y: auto;
+  z-index: 10000;
+  font-family: 'Segoe UI', sans-serif;
+
+  /* Hidden off-screen and transparent */
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+
+  /* Smooth transitions */
+  transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s;
+}
+
+/* When shown - slide in and fade in */
+#asideSection.show {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Close Button */
+#closeAside {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s ease;
+}
+
+#closeAside:hover {
+  color: #d32f2f;
+}
+
+/* Header */
+#asideSection h3 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #d32f2f;
+  text-align: center;
+}
+
+/* Passenger Form Entries */
+#passengerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.passenger-entry {
+  background-color: #f9f9f9;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.passenger-entry label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+  color: #333;
+}
+
+.passenger-entry input,
+.passenger-entry select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Payment Button */
+#paymentBtn {
+  width: 100%;
+  padding: 14px;
+  background-color: #d32f2f;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#paymentBtn:hover {
+  background-color: #b71c1c;
+}

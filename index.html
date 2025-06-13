@@ -4,54 +4,343 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Paruvatha</title>
-        <link rel="stylesheet" href="./sources/css/home.css">
+        <title>Paruvatha - Bus Booking</title>
+        <link rel="stylesheet" href="/Paruvatha_Bus_Booking_Website/sources/css/home.css">
+        <script src="https://unpkg.com/lucide@latest"></script>
     </head>
 
     <body>
-        <header>
-            <div id="header">
-                <div id="logo-and-name">
-                    <div id="logo-img"><img src="./assets/icons/about-icon.svg" alt="logo-image-of-paruvatha" width="50px" height="50px"></div>
-                    <div id="name-of-the-website">
-                        <h1>Paruvatha</h1>
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <i data-lucide="bus"></i>
+                        <span>Paruvatha</span>
                     </div>
-                </div>
-                <div class="navbars">
-                    <nav>
-                        <ul>
-                            <li>
-                                <img src="./assets/icons/home-icon.svg" alt="home-icon" width="20" height="20">
-                                <a href="">Home</a>
-                            </li>
-                            <li>
-                                <img src="./assets/icons/about-icon.svg" alt="about-icon" width="20" height="20">
-                                <a href="">About</a>
-                            </li>
-                            <li>
-                                <img src="./assets/icons/contact-icon.svg" alt="contact" width="20" height="20">
-                                <a href="">Contact us</a>
-                            </li>
-                        </ul>
+
+                    <nav class="nav">
+                        <a href="#" class="nav-link">
+                            <i data-lucide="home"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="/Paruvatha_Bus_Booking_Website/public/about.html" class="nav-link">
+                            <i data-lucide="info"></i>
+                            <span>About</span>
+                        </a>
+                        <!-- Hide Admin link by default -->
+                        <div id="adminLink" style="display: none;">
+                            <a href="/Paruvatha_Bus_Booking_Website/public/adminpage.html" class="nav-link" id="adminLink" style="display: none;">
+                                <i data-lucide="user-cog"></i>
+                                <span>Admin Page</span>
+                              </a>
+                              
+                        </div>
+
+                        <button class="nav-link" id="userBtn">
+                            <i data-lucide="user"></i>
+                            <span>User</span>
+                        </button>
+                        <aside id="userAside" style="display: none;" class="user-aside">
+                            <p id="asideName"></p>
+                            <p id="asideEmail" style="display: none;"></p>
+                            <button id="logoutBtn">Logout</button>
+                        </aside>
+
                     </nav>
-                    <div id="user-icon-or-login-button">
-                        <div id="user-icon"></div>
-                        <div id="login-button"><button id="login-button">Login</button></div>
+                </div>
+            </div>
+
+        </header>
+
+        <main class="main">
+            <div class="main-container">
+                <div class="container">
+                    <div class="search-card">
+                        <h2>Find Your Journey</h2>
+
+                        <form id="searchForm" class="search-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="from">From</label>
+                                    <input type="text" id="from" placeholder="Enter departure city" required>
+                                    <div id="fromSuggestions" class="suggestions"></div> <!-- Add this -->
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="to">To</label>
+                                    <input type="text" id="to" placeholder="Enter destination city" required>
+                                    <div id="toSuggestions" class="suggestions"></div> <!-- Add this -->
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="date">Date</label>
+                                    <input type="date" id="date" required>
+                                </div>
+
+                                <p id="selected-date" class="current-date-display">Select a date</p>
+
+                            </div>
+
+                            <button type="submit" class="search-btn">
+                                <i data-lucide="search"></i>
+                                <span>Search Buses</span>
+                            </button>
+                        </form>
                     </div>
                 </div>
-
             </div>
-        </header>
-        <main>
-            <section class="section-1">
-                <div class="front-image">
-                    <img src="./assets/images/paruvatha-front-image.png" alt="">
-                    <div class="search-div">
+        </main>
 
-                    </div>
+
+
+
+        <main>
+            <h2 id="places-heading">Popular Indian Tourist Places</h2>
+            <div class="carousel-container">
+                <div class="carousel" id="places-container"></div>
+                <button class="prev" id="prev">&#10094;</button>
+                <button class="next" id="next">&#10095;</button>
+            </div>
+
+            <section class="benefits">
+                <h2>Why Choose Us?</h2>
+                <div class="benefit-card">
+                    <img src="https://imgs.search.brave.com/iFSgr6lsvscjcuyXWSXBJTfFVwfvumdqTK57nPxN4VE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzExLzIyLzgwLzE1/LzM2MF9GXzExMjI4/MDE1MjRfUEl1NlFj/TDJ6b2pzSmtGcUpi/Vk9QQTRhUFZGUGtn/WXMuanBn"
+                        alt="Easy Booking">
+                    <h3>Easy Booking</h3>
+                    <p>Book your tickets with just a few clicks!</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="https://imgs.search.brave.com/3MQ90Cyz5k8xF0R0tUFRU9QKamfwCXmsMuYl67bdpg4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA5LzE3LzQ3LzAx/LzM2MF9GXzkxNzQ3/MDExNF82QmRwMnFE/QjVXcVQ1UUZ6V2p1/bnc4VU90OWxRWXdX/Zi5qcGc"
+                        alt="Affordable Fares">
+                    <h3>Affordable Fares</h3>
+                    <p>Get the best prices for your journey.</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="https://imgs.search.brave.com/lY7pzaOcXgjhOnBjq98yWyZi4i_ZJ8pusxZCbty_TxU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9nb29k/aWVzLmljb25zOC5j/b20vd2ViL2NvbW1v/bi9hdXRvY29tcGxl/dGUvZG9tYWlucy9p/Y29ucy5zdmc"
+                        alt="Reliable Service">
+                    <h3>Reliable Service</h3>
+                    <p>Travel safely and on time with our trusted buses.</p>
                 </div>
             </section>
+
+
+            <section class="reviews-carousel-section">
+                <h2>Our Valued Customers</h2>
+                <div class="reviews-carousel-container">
+                    <button class="carousel-btn prev">&#10094;</button>
+
+                    <div class="reviews-carousel-wrapper">
+                        <div class="reviews-carousel">
+                            <div class="review-card">
+                                <p class="customer-name">Abdul Kalam S</p>
+                                <p class="review-text">"Amazing experience! The booking was smooth, and the service was
+                                    great!"</p>
+                            </div>
+                            <div class="review-card">
+                                <p class="customer-name">Brindha</p>
+                                <p class="review-text">"Great service and on-time buses. Will definitely book again!"
+                                </p>
+                            </div>
+                            <div class="review-card">
+                                <p class="customer-name">Deepak V</p>
+                                <p class="review-text">"Very comfortable journey with top-notch amenities. Highly
+                                    recommended!"</p>
+                            </div>
+                            <div class="review-card">
+                                <p class="customer-name">Devika S</p>
+                                <p class="review-text">"Loved the ease of booking and the overall experience. Thanks!"
+                                </p>
+                            </div>
+                            <div class="review-card">
+                                <p class="customer-name">Dhanasri V</p>
+                                <p class="review-text">"I had a pleasant trip, and the bus was very clean and
+                                    well-maintained."</p>
+                            </div>
+                            <div class="review-card">
+                                <p class="customer-name">Dharani Sri A</p>
+                                <p class="review-text">"Fantastic experience! The booking process was seamless and easy
+                                    to follow."</p>
+                            </div>
+                            <div class="review-card">
+                                <p class="customer-name">G S Chandhru</p>
+                                <p class="review-text">"The bus was comfortable, and the staff was friendly. Very happy
+                                    with the service!"</p>
+                            </div>
+                            <div class="review-card">
+                                <p class="customer-name">Harini Ragavi</p>
+                                <p class="review-text">"Great experience. I will definitely recommend this service to
+                                    others!"</p>
+                            </div>
+                            <div class="review-card">
+                                <p class="customer-name">Jeshin Daniel</p>
+                                <p class="review-text">"Comfortable seating and excellent customer service. Thumbs up!"
+                                </p>
+                            </div>
+                            <div class="review-card">
+                                <p class="customer-name">Kaleeshwari</p>
+                                <p class="review-text">"I am really impressed with the cleanliness and punctuality of
+                                    the service."</p>
+                            </div>
+                            <div class="review-card">
+                                <p class="customer-name">Mohamed Ibrahim</p>
+                                <p class="review-text">"A very smooth and comfortable journey. The booking was
+                                    hassle-free!"</p>
+                            </div>
+                            <div class="review-card">
+                                <p class="customer-name">Mohamed J</p>
+                                <p class="review-text">"Had a great time! The staff was courteous, and the journey was
+                                    pleasant."</p>
+                            </div>
+                            <div class="review-card">
+                                <p class="customer-name">Musharaf S</p>
+                                <p class="review-text">"I would highly recommend this service to anyone looking for a
+                                    reliable travel option!"</p>
+                            </div>
+                            <div class="review-card">
+                                <p class="customer-name">Naveen Kumar</p>
+                                <p class="review-text">"The trip was comfortable and the bus was on time. Great
+                                    service!"</p>
+                            </div>
+                            <div class="review-card">
+                                <p class="customer-name">R.Rajesh</p>
+                                <p class="review-text">"Absolutely excellent service! The bus was clean, and the ride
+                                    was smooth."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-btn next">&#10095;</button>
+                </div>
+            </section>
+
+
+
+
         </main>
+
+
+
+
+
+
+        <div class="modal" id="authModal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <button class="close-btn" id="closeModal">
+                    <i data-lucide="x"></i>
+                </button>
+
+                <div class="modal-body">
+                    <h2 id="modalTitle">Login</h2>
+
+                    <form id="authForm" class="auth-form">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <div class="input-icon">
+                                <i data-lucide="mail"></i>
+                                <input type="email" id="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-icon">
+                                <i data-lucide="lock"></i>
+                                <input type="password" id="password" placeholder="Enter your password" required>
+                            </div>
+                        </div>
+
+
+
+                        <button type="submit" class="submit-btn" id="submitBtn">Login</button>
+
+                        <div class="toggle-auth">
+                            <button type="button" id="toggleAuth">Don't have an account? Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Signup Popup Modal -->
+        <div class="modal" id="signupModal">
+
+            <div class="modal-content">
+                <span id="closeSignupModal" class="close">&times;</span>
+                <button class="close-btn" id="closeSignupModal">
+                    <i data-lucide="x"></i>
+                </button>
+
+                <div class="modal-body">
+                    <h2>Sign Up</h2>
+
+                    <form id="signupForm" class="auth-form">
+                        <div class="form-group">
+                            <label for="signupName">Full Name</label>
+                            <div class="input-icon">
+                                <i data-lucide="user"></i>
+                                <input type="text" id="signupName" placeholder="Enter your full name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signupEmail">Email</label>
+                            <div class="input-icon">
+                                <i data-lucide="mail"></i>
+                                <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signupPhone">Phone Number</label>
+                            <div class="input-icon">
+                                <i data-lucide="phone"></i>
+                                <input type="tel" id="signupPhone" placeholder="Enter your phone number" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signupPassword">Password</label>
+                            <div class="input-icon">
+                                <i data-lucide="lock"></i>
+                                <input type="password" id="signupPassword" placeholder="Enter your password" required>
+                            </div>
+                        </div>
+
+
+
+                        <button type="submit" class="submit-btn">Sign Up</button>
+
+                        <div class="toggle-auth">
+                            <button type="button" id="switchToLogin">Already have an account? Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 Paruvatha Bus Booking | All Rights Reserved</p>
+                <div class="footer-links">
+                    <a href="#">About Us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+        <script src="/Paruvatha_Bus_Booking_Website/sources/js/home.js"></script>
     </body>
 
 </html>

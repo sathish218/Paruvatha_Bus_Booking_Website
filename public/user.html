@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paruvatha - Login & Signup</title>
+  <link rel="stylesheet" href="/Paruvatha_Bus_Booking_Website/sources/css/user.css" />
+</head>
+<body>
+
+  <div class="container">
+    
+
+    <form id="authForm">
+        <h2 id="form-title">Login</h2>
+    
+        <input type="text" id="name" name="name" placeholder="Name" style="display: none;" required>
+        <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" style="display: none;" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+      
+        <button type="submit">Login</button>
+        <p id="responseMsg"></p>
+        <p id="toggleForm">Don't have an account? <a href="#">Sign up</a></p>
+      </form>
+      
+
+    <p id="responseMsg"></p>
+  </div>
+
+  <script src="/Paruvatha_Bus_Booking_Website/sources/js/user.js"></script>
+</body>
+</html>

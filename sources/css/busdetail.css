@@ -1,0 +1,325 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: rgb(249, 250, 251);
+    color: rgb(17, 24, 39);
+    line-height: 1.5;
+}
+
+.container {
+    min-height: 100vh;
+}
+
+/* Header styles */
+.header {
+    background-color: white;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    background-color: #922020;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    background: none;
+    color:white;
+    font-size: 1.125rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    transition: color 0.2s;
+}
+
+.back-button:hover {
+    color: rgb(17, 24, 39);
+}
+
+/* Content layout */
+.content {
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Filters sidebar */
+.filters {
+    background-color: #dee2e6;
+    height: 100vh;
+    width: 18rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    height: fit-content;
+}
+
+.filters h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: rgb(17, 24, 39);
+    margin-bottom: 1rem;
+}
+
+.filter-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.filter-group {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(229, 231, 235);
+}
+
+.filter-group h3 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgb(55, 65, 81);
+    margin-bottom: 0.75rem;
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-button {
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    background: none;
+    color: rgb(75, 85, 99);
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-button:hover {
+    background-color: rgb(249, 250, 251);
+}
+
+.filter-button.active {
+    background-color: rgb(238, 242, 255);
+    color: rgb(79, 70, 229);
+}
+
+/* Main content area */
+.main-content {
+    flex: 1;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    height: 100vh;
+}
+
+.main-content h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: rgb(17, 24, 39);
+    margin-bottom: 1rem;
+}
+
+.empty-state {
+    color: rgb(107, 114, 128);
+}
+
+/* Buscontainer */
+/* Bus Item Container */
+.bus-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 16px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .bus-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Bus Name and Type */
+  .bus-item h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 12px 0;
+  }
+  
+  /* All paragraphs */
+  .bus-item p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+    color: #4a4a4a;
+    line-height: 1.5;
+  }
+  
+  /* Strong elements */
+  .bus-item strong {
+    font-weight: 600;
+    color: #2d2d2d;
+  }
+  
+  /* Route arrow */
+  .bus-item p:nth-child(2) {
+    font-size: 1rem;
+  }
+  
+  /* Departure and Arrival times */
+  .bus-item p:nth-child(3),
+  .bus-item p:nth-child(4) {
+    color: #0066cc;
+  }
+  
+  /* Seats and Fare information */
+  .bus-item p:nth-child(5) {
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 12px 0;
+  }
+  
+  /* Amenities section */
+  .bus-item p:last-child {
+    border-top: 1px solid #eaeaea;
+    padding-top: 12px;
+    margin-top: 12px;
+    color: #666666;
+  }
+  
+  /* Price styling */
+  .bus-item p:nth-child(5) strong:contains("Fare") {
+    color: #d4393e;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .bus-item {
+      padding: 16px;
+    }
+  
+    .bus-item h3 {
+      font-size: 1.1rem;
+    }
+  
+    .bus-item p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .bus-item {
+    animation: fadeIn 0.3s ease-out;
+  }
+  .busdetail-img{
+    height: 10px;
+  }
+
+  .loader {
+    --d: 22px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    color: #25b09b;
+    box-shadow: 
+      calc(1*var(--d))      calc(0*var(--d))     0 0,
+      calc(0.707*var(--d))  calc(0.707*var(--d)) 0 1px,
+      calc(0*var(--d))      calc(1*var(--d))     0 2px,
+      calc(-0.707*var(--d)) calc(0.707*var(--d)) 0 3px,
+      calc(-1*var(--d))     calc(0*var(--d))     0 4px,
+      calc(-0.707*var(--d)) calc(-0.707*var(--d))0 5px,
+      calc(0*var(--d))      calc(-1*var(--d))    0 6px;
+    animation: l27 1s infinite steps(8);
+    display: none; /* Initially hidden */
+    margin-left: 600px;
+    margin-top: 200px;
+}
+@keyframes l27 {
+    100% {transform: rotate(1turn)}
+}
+.filter-button.selected {
+    background-color: #28a745;
+    color: white;
+}
+
+.bus-item {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 15px 0;
+  background-color: #f9f9f9;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.bus-item:hover {
+  transform: scale(1.02);
+}
+
+.bus-header h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+.bus-amenities p{
+  margin-top: 40px;
+  width: 270px;
+}
+
+
+.bus-route p,
+.bus-departure p,
+.bus-arrival p {
+  font-size: 0.9rem;
+  color: #666;
+  
+}
+
+.buy-now-btn {
+  margin-top: 50px;
+  background-color: #007bff;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin-top: 80px;
+  transition: background-color 0.3s;
+  width: 140px;
+  height: 50px;
+}
+
+.buy-now-btn:hover {
+  background-color: #0056b3;
+}

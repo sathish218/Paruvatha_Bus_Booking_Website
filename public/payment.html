@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="/Paruvatha_Bus_Booking_Website/sources/css/payment.css">
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Payment Details</h2>
+        <form id="payment-form">
+            <label for="payerName">Full Name:</label>
+            <input type="text" id="payerName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" required>
+
+            <label for="paymentMethod">Payment Method:</label>
+            <select id="paymentMethod" required onchange="toggleCardFields()">
+                <option value="credit_card">Credit Card</option>
+                <option value="google_pay">Google Pay</option>
+            </select>
+
+            <div id="card-fields">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" minlength="16" maxlength="16" required>
+
+                <label for="cardPin">PIN:</label>
+                <input type="password" id="cardPin" minlength="4" maxlength="4" required>
+            </div>
+
+            <button type="submit">Confirm Payment</button>
+        </form>
+    </div>
+
+    <script src="/Paruvatha_Bus_Booking_Website/sources/js/payment.js"></script>
+</body>
+</html>

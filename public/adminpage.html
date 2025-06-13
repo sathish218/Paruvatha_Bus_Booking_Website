@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Service Management</title>
+  <link rel="stylesheet" href="/Paruvatha_Bus_Booking_Website/sources/css/admin.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+ 
+
+  <div class="container">
+    <div class="form-card">
+      <div class="header">
+        <h1>Bus Service Management</h1>
+        <p>Add new bus service details</p>
+      </div>
+
+      <form id="busForm">
+        <!-- Bus Name -->
+        <div class="form-group">
+          <label>
+            <i data-lucide="bus"></i>
+            Bus Name
+          </label>
+          <input type="text" name="busName" required>
+        </div>
+
+        <!-- From and To Places -->
+        <div class="form-row">
+          <div class="form-group input-group">
+            <label>
+              <i data-lucide="map-pin"></i> From Place
+            </label>
+            <input type="text" name="fromPlace" id="fromPlace" required autocomplete="off" />
+            <div id="fromSuggestions" class="suggestions"></div>
+          </div>
+        
+          <div class="form-group input-group">
+            <label>
+              <i data-lucide="map-pin"></i> To Place
+            </label>
+            <input type="text" name="toPlace" id="toPlace" required autocomplete="off" />
+            <div id="toSuggestions" class="suggestions"></div>
+          </div>
+        </div>
+        
+
+        <!-- Boarding and Arrival Places -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>
+              <i data-lucide="map-pin"></i>
+              Boarding Place
+            </label>
+            <input type="text" name="boardingPlace" required>
+          </div>
+          <div class="form-group">
+            <label>
+              <i data-lucide="map-pin"></i>
+              Arrival Place
+            </label>
+            <input type="text" name="arrivalPlace" required>
+          </div>
+        </div>
+
+        <!-- Departure Details -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>
+              <i data-lucide="calendar"></i>
+              Departure Date
+            </label>
+            <input type="date" name="departureDate" id = "departureDate" required>
+            <p class="selected-date" id="departureDisplay"></p>
+          </div>
+          <div class="form-group">
+            <label>
+              <i data-lucide="clock"></i>
+              Departure Time
+            </label>
+            <input type="time" name="departureTime"  required>
+          </div>
+        </div>
+
+        <!-- Arrival Details -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>
+              <i data-lucide="calendar"></i>
+              Arrival Date
+            </label>
+            <input type="date" name="arrivalDate" id="arrivalDate" required>
+            <p class="selected-date" id="arrivalDisplay"></p>
+          </div>
+          <div class="form-group">
+            <label>
+              <i data-lucide="clock"></i>
+              Arrival Time
+            </label>
+            <input type="time" name="arrivalTime" required>
+          </div>
+        </div>
+
+        <!-- Bus Type and Seat Count -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>
+              <i data-lucide="bus"></i>
+              Bus Type
+            </label>
+            <select name="busType" required>
+              <option value="">Select Bus Type</option>
+              <option value="seater">Seater</option>
+              <option value="sleeper">Sleeper</option>
+              <option value="seater-sleeper">Seater/Sleeper</option>
+            </select>
+          </div>
+          <div class="form-group" id="seatCountContainer" style="display: none;">
+            <label>
+              <i data-lucide="bus"></i>
+              Seat Count
+            </label>
+            <select name="seatCount" required>
+              <option value="">Select Seat Count</option>
+            </select>
+          </div>
+        </div>
+       <!-- Seater and Sleeper Fare Fields -->
+<div class="form-row">
+  <div class="form-group" id="seaterFareContainer" style="display: none;">
+    <label>
+      <i data-lucide="dollar-sign"></i>
+      Seater Fare
+    </label>
+    <input type="number" name="seaterFare" placeholder="Enter Seater Fare">
+  </div>
+  <div class="form-group" id="sleeperFareContainer" style="display: none;">
+    <label>
+      <i data-lucide="dollar-sign"></i>
+      Sleeper Fare
+    </label>
+    <input type="number" name="sleeperFare" placeholder="Enter Sleeper Fare">
+  </div>
+</div>
+
+
+        <!-- Amenities -->
+        <div class="form-group">
+          <label>Amenities</label>
+          <div class="checkbox-group">
+            <div class="checkbox-item">
+              <input type="checkbox" id="ac" name="ac">
+              <label for="ac">Air Conditioning</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="blankets" name="blankets">
+              <label for="blankets">Blankets</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="waterBottle" name="waterBottle">
+              <label for="waterBottle">Water Bottle</label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit">Add Bus Service</button>
+      </form>
+    </div>
+  </div>
+  <script src="/Paruvatha_Bus_Booking_Website/sources/js/admin.js"></script>
+</body>
+</html>

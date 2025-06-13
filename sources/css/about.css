@@ -1,0 +1,128 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background: #f9f9fb;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+  }
+  
+  .container {
+    max-width: 800px;
+    background: white;
+    padding: 40px 50px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    animation: fadeInScale 0.8s ease forwards;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2c3e50;
+    position: relative;
+    cursor: default;
+  }
+  
+  h2 {
+    color: #34495e;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #27ae60;
+    padding-bottom: 8px;
+    transition: color 0.3s ease;
+  }
+  
+  h2:hover {
+    color: #2ecc71;
+  }
+  
+  .highlight {
+    color: #27ae60;
+    font-weight: 700;
+  }
+  
+  .intro {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  ul {
+    list-style: inside disc;
+    margin-left: 20px;
+    margin-bottom: 30px;
+  }
+  
+  li {
+    margin-bottom: 12px;
+    font-size: 1rem;
+  }
+  
+  .thank-you {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 40px;
+    text-align: center;
+    color: #16a085;
+  }
+  
+  /* Fade-in animation for sections with delay */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+  }
+  
+  .delay-1 { animation-delay: 0.2s; }
+  .delay-2 { animation-delay: 0.4s; }
+  .delay-3 { animation-delay: 0.6s; }
+  .delay-4 { animation-delay: 0.8s; }
+  .delay-5 { animation-delay: 1s; }
+  .delay-6 { animation-delay: 1.2s; }
+  .delay-7 { animation-delay: 1.4s; }
+  .delay-8 { animation-delay: 1.6s; }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .container {
+      padding: 30px 20px;
+    }
+  
+    h1 {
+      font-size: 2.2rem;
+    }
+  
+    h2 {
+      font-size: 1.3rem;
+    }
+  }
+  
